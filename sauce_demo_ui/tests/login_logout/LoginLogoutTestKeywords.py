@@ -38,3 +38,12 @@ class LoginLogoutTestKeywords:
     @keyword
     def reload_sauce_demo_app(self):
         self.app.browser.reload()
+
+    @keyword
+    def user_logout_from_sauce_lab_demo_app(self):
+        self.app.menu.open()
+        self.app.menu.LOGOUT_BTN.click()
+
+    @keyword
+    def user_should_be_in_the_login_page_upon_successful_logout(self):
+        self.app.login.LOGIN_BTN.should_be_visible()
