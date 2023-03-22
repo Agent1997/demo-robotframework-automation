@@ -2,6 +2,7 @@ from SeleniumLibrary import SeleniumLibrary
 
 from sauce_demo_ui.page_objects.Browser import Browser
 from sauce_demo_ui.page_objects.Login import LoginPage
+from sauce_demo_ui.page_objects.Menu import Menu
 from sauce_demo_ui.page_objects.Products import Products
 
 
@@ -12,6 +13,7 @@ class SauceDemoApp:
         self.__browser = Browser(se_lib=se_lib)
         self.__login = LoginPage(se_lib=se_lib)
         self.__products = Products(se_lib=se_lib)
+        self.__menu = Menu(se_lib=se_lib)
 
     @property
     def browser(self):
@@ -24,3 +26,7 @@ class SauceDemoApp:
     @property
     def products(self):
         return self.__products
+
+    @property
+    def menu(self):
+        return self.__menu
