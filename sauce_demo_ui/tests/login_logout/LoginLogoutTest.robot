@@ -27,6 +27,11 @@ Verify That User With Valid Username And Password Can Successfully Login
     User Should Be In The Product Page Upon Successful Login
 
 
+Verify That User Can Logout From Sauce Lab Demo App
+    User Login To Sauce Lab Demo App    username=${valid_username}        password=${valid_password}
+    User Should Be In The Product Page Upon Successful Login
+    User Logout From Sauce Lab Demo App
+    User Should Be In The Login Page Upon Successful Logout
 
 *** Keywords ***
 Verify Login Using Invalid Credentials
