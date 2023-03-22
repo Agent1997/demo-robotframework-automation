@@ -1,5 +1,5 @@
 *** Settings ***
-Library         LoginLogoutTestKeywords.py      headless=${False}
+Library         sauce_demo_ui.AppKeywords     headless=${False}
 Test Setup      Open Sauce Lab Demo App
 Test Teardown   Close Sauce Lab Demo App
 
@@ -38,6 +38,6 @@ Verify Login Using Invalid Credentials
     [Arguments]     ${username}         ${password}         ${exp_err_msg}
     User Login To Sauce Lab Demo App    username=${username}        password=${password}
     User Should Not Be Able To Login
-    Error Message Should Be    exp_err_msg=${exp_err_msg}
+    Login Error Message Should Be    exp_err_msg=${exp_err_msg}
     [Teardown]      Reload Sauce Demo App
 
