@@ -21,3 +21,6 @@ class Products:
     @property
     def PAGE_TITLE(self):
         return self.__element.with_locator(locator=PAGE_TITLE)
+
+    def sort_by_select_value(self, select_value: str):
+        self.__wa.select_by_value(locator=SELECT_PRODUCT_SORT, value=select_value)
