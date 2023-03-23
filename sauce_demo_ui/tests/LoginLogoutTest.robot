@@ -1,5 +1,5 @@
 *** Settings ***
-Library         sauce_demo_ui.AppKeywords     headless=${False}
+Library         sauce_demo_ui.AppKeywords     headless=${True}
 Test Setup      Open Sauce Lab Demo App
 Test Teardown   Close Sauce Lab Demo App
 
