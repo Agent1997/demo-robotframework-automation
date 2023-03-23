@@ -10,6 +10,8 @@ ADD_TO_CART_BTN_TPL: str = 'xpath://div[normalize-space()="{0}"]/../../..//butto
 ITEM_PRICE_TPL: str = 'xpath://div[normalize-space()="{0}"]/../../..//div[@class="inventory_item_price"]'  # parameter is complete item name
 ITEM_DESCRIPTION: str = 'xpath:////div[normalize-space()="{0}"]//../following-sibling::div[@class="inventory_item_desc"]'  # parameter is complete item name
 PAGE_TITLE: str = 'xpath://span[contains(text(),"Products")]'
+LIST_OF_ITEM_NAMES: str = 'xpath://div[@class="inventory_item_name"]'
+LIST_OF_ITEM_PRICES: str = 'xpath://div[@class="inventory_item_price"]'
 
 
 class Products:
@@ -21,3 +23,14 @@ class Products:
     @property
     def PAGE_TITLE(self):
         return self.__element.with_locator(locator=PAGE_TITLE)
+
+    @property
+    def ITEM_NAMES(self):
+        return self.__element.with_locator(locator=LIST_OF_ITEM_NAMES)
+
+    @property
+    def ITEM_PRICES(self):
+        return self.__element.with_locator(locator=LIST_OF_ITEM_PRICES)
+
+    def sort_by_select_value(self, select_value: str):
+        self.__wa.select_by_value(locator=SELECT_PRODUCT_SORT, value=select_value)
